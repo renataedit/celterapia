@@ -1,0 +1,38 @@
+{
+  "name": "celterapia",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.php",
+  "watch": {
+    "build-css": {
+      "patterns": "wp-content/themes/rsd_starter/scss",
+      "extensions": "scss"
+    },
+    "build-js": {
+      "patterns": "wp-content/themes/rsd_starter/js",
+      "extensions": "js"
+    }
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-css": "node-sass wp-content/themes/rsd_starter/scss -o wp-content/themes/rsd_starter/public/css",
+    "build-js": "uglifyjs wp-content/themes/rsd_starter/js/scripts.js -o wp-content/themes/rsd_starter/public/js/scripts.min.js -c",
+    "watch": "npm-watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/renataedit/celterapia.git"
+  },
+  "author": "Renata Szabo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/renataedit/celterapia/issues"
+  },
+  "homepage": "https://github.com/renataedit/celterapia#readme",
+  "devDependencies": {
+    "node-sass": "^6.0.0",
+    "nodemon": "^2.0.7",
+    "npm-watch": "^0.9.0",
+    "uglify-js": "^3.13.7"
+  }
+}
