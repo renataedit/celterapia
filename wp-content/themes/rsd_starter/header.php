@@ -28,7 +28,7 @@
 				<div class="body-overlay"></div>
 				<a href="#" class="mobile-menu-container__button mobile-menu-container__button--open" aria-label="Open Mobile Menu" aria-controls="mobile-menu-container">
 					<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="28" height="32" viewBox="0 0 28 32" class="mobile-menu-container__icon">
-					<title>bars</title>
+					<title>Open Menu</title>
 					<path d="M1 8.25h26c0.552 0 1-0.448 1-1v-2.5c0-0.552-0.448-1-1-1h-26c-0.552 0-1 0.448-1 1v2.5c0 0.552 0.448 1 1 1zM1 18.25h26c0.552 0 1-0.448 1-1v-2.5c0-0.552-0.448-1-1-1h-26c-0.552 0-1 0.448-1 1v2.5c0 0.552 0.448 1 1 1zM1 28.25h26c0.552 0 1-0.448 1-1v-2.5c0-0.552-0.448-1-1-1h-26c-0.552 0-1 0.448-1 1v2.5c0 0.552 0.448 1 1 1z"></path>
 					</svg>
 				</a>

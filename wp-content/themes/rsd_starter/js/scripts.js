@@ -39,24 +39,18 @@ const closeMenu = () => {
   });
 
   const hideElement = () => {
-    return new Promise(() => {
+    return new Promise((resolve) => {
       overlayElement.animate([
         {opacity: '0'},
       ], {
         duration: 300,
         fill: 'forwards'
       });
+      setTimeout(resolve, 350);
     });
   }
 
-  hideElement().then(() => { overlayElement.style.display = 'none'});
-
-/*   hideElement().then(
-  result => {
-    console.log(result);
-  }).catch(error => {
-    console.log(error);
-  }); */
+  hideElement().then(() => { overlayElement.style.display = 'none'; });
 }
 
 let openMenu = () => {
@@ -88,7 +82,12 @@ function initMobileMenu(e) {
   }
 }
 
+// Close menu on Escape
+document.addEventListener('keyup', (e) => {
+  if ( e.key === "Escape" ) closeMenu();
+});
 
+// Close menu on clicking out of it
 overlayElement.addEventListener('click', closeMenu);
 hideMobileMenu.addEventListener('click', closeMenu);
 showMobileMenu.addEventListener('click', initMobileMenu);

@@ -264,9 +264,9 @@ sup { top: -.5rem; }
 
 a {
   font-weight: 700;
-  color: var(--highlight);
+  color: var(--highlight-dark);
   text-decoration: none;
-  border-bottom: 2px solid var(--bg-dark);
+  border-bottom: 1px solid var(--bg-dark);
 }
 
 a:hover,
@@ -274,36 +274,47 @@ a:focus {
   color: var(--highlight-dark);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   font-family: var(--sans);
   color: var(--text-dark);
 }
 
-h1 {
+h1, .h1 {
   font-weight: 700;
   font-size: 2.488rem;
   letter-spacing: -2px;
 }
 
-h2 {
+h2, .h2 {
   margin: 2.5rem 0 1.25rem;
   font-size: 2.074rem;
   letter-spacing: -1.5px;
 }
 
-h3 {
+h3, .h3 {
   margin: 2.25rem 0 1.125rem;
   font-size: 1.728rem;
   letter-spacing: -1.25px;
 }
 
-h4 {
+h4, .h4 {
   margin: 2rem 0 1rem;
-  font-size: 1.44rem;
+  font-size: 1rem;
+  font-weight: 600;
   letter-spacing: -.75px;
+
+  &:before {
+    content: "";
+    display: inline-block;
+    width: .9rem;
+    height: 2px;
+    background-color: var(--text-dark);
+    margin-bottom: 5px;
+    margin-right: .5rem;
+  }
 }
 
-h5, h6 {
+h5, .h5, h6, .h6 {
   margin: 1.5rem 0 .75rem;
   font-weight: 700;
   font-size: 1.2rem;
@@ -319,8 +330,8 @@ p {
 
 li {
   margin-bottom: .75rem;
-  font-size: 1.25rem;
-  line-height: 1.8;
+  font-size: 1rem;
+  line-height: 1.3;
   letter-spacing: -.25px;
 }
 
@@ -401,7 +412,7 @@ textarea {
   resize: vertical;
   max-width: 100%;
   min-width: 100%;
-  min-height: 10rem;
+  min-height: 2rem;
 }
 
 fieldset {
@@ -507,7 +518,7 @@ td {
   }
 
   &--white {
-    background-color: #FFF;
+    background-color: rgba(255, 255, 255, .75);
     box-shadow: 0 3px 8px rgba(0, 0, 0, .25);
 
     .container {
@@ -584,8 +595,8 @@ td {
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: rgba( 255,255,255,.75 );
-    box-shadow: 0 3px 8px rgba( 0,0,0,.25 );
+    background-color: rgba(255, 255, 255, .75);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, .25);
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
@@ -605,7 +616,7 @@ td {
   z-index: 998;
   width: 100%;
   height: 100%;
-  background-color: rgba( 0,0,0,.7 );
+  background-color: rgba(0, 0, 0, .7);
   opacity: 0;
 }
 
@@ -663,10 +674,140 @@ td {
 
 
 
+/* Home Page sections */
+
+.articles {
+  padding: 4rem 0;
+
+  &__list {
+    list-style: none;
+  }
+
+  &__item {
+    
+  }
+
+  &__link {
+    border: 0;
+    color: var(--text-dark);
+    font-weight: 400;
+  }
+}
+
+.contact-us {
+  background-color: var(--bg-dark);
+  padding: 4rem 0;
+
+  &__title {
+    margin-top: 0;
+    color: var(--highlight);
+
+    &:before {
+      background-color: var(--highlight);
+    }
+  }
+
+  .form-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  input, textarea {
+    padding: .5rem;
+    border: 0;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+
+  input {
+    @media only screen and (max-width: $sm) {
+      margin-bottom: 1rem;
+    }
+  }
+
+  .wpcf7-submit {
+    margin-top: 1.6rem;
+    padding: .5rem .8rem;
+    font-weight: 600;
+    cursor: pointer;
+
+    @media only screen and (max-width: $sm) {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  .screen-reader-response,
+  .wpcf7-response-output {
+    color: var(--danger);
+    font-size: 1rem;
+
+    li {
+      margin: 0;
+      font-size: 1rem;
+    }
+  }
+
+  .wpcf7-response-output { margin: 1.2rem 0;}
+}
+
+.social-icons {
+  padding: 4rem 0;
+
+  &__list {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    margin-right: .5rem;
+    padding: .5rem;
+    border: 0;
+    color: var(--highlight);
+    text-decoration: none;
+
+    &:hover {
+      text-shadow: 0 2px 2px rgba(0, 0, 0, .25);
+    }
+
+    &--facebook:hover {
+      color: #274F91;
+
+      .social-icons__icon { fill: #274F91; }
+    }
+
+    &--twitter:hover {
+      color: #009DED;
+
+      .social-icons__icon { fill: #009DED; }
+    }
+
+    &--youtube:hover {
+      color: #F70000;
+
+      .social-icons__icon { fill: #F70000; }
+    }
+  }
+
+  &__icon {
+    width: 1.4rem;
+    height: auto;
+    fill: var(--highlight);
+    margin-right: .5rem;
+  }
+}
+
+
+
 /* Footer */
 
 .main-footer {
-  padding: 100px 0;
+  padding: 6rem 0;
   background-color: var(--bg-dark);
   font-family: 'Quicksand';
   font-weight: 400;
